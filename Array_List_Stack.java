@@ -29,6 +29,14 @@ public class Array_List_Stack {
         S.pushATBottom(data, S);
       S.Push(top);
     }
+    public static void Reverse(Stack S){
+        if(S.isEmpty()){
+            return;
+        }
+        int start =S.Pop();
+        Reverse(S);
+        S.pushATBottom(start, S);
+    }
    } 
    public static void main(String[] args) {
     Stack S=new Stack();
@@ -39,6 +47,7 @@ public class Array_List_Stack {
     S.Push(190);
     S.Push(56);
     S.pushATBottom(18, S);
+   S.Reverse(S);
     System.out.print("Elements In The Stack : ");
       System.out.print("{");
     while(S.isEmpty()!=true){
