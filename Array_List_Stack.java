@@ -1,4 +1,3 @@
-import java.io.PushbackInputStream;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,34 +19,13 @@ public class Array_List_Stack {
         int start=L.get(L.size()-1);
         return start;
     }
-    public void pushATBottom(int data,Stack S){
-        if(S.isEmpty()){
-            S.Push(data);
-            return;
-        }
-        int top=S.Pop();
-        S.pushATBottom(data, S);
-      S.Push(top);
-    }
-    public static void Reverse(Stack S){
-        if(S.isEmpty()){
-            return;
-        }
-        int start =S.Pop();
-        Reverse(S);
-        S.pushATBottom(start, S);
-    }
    } 
    public static void main(String[] args) {
     Stack S=new Stack();
     Random R=new Random();
-    S.Push(8);
-    S.Push(89);
-    S.Push(78);
-    S.Push(190);
-    S.Push(56);
-    S.pushATBottom(18, S);
-   S.Reverse(S);
+    for(int i=0; i<10; i++){
+        S.Push(R.nextInt(100));
+    }
     System.out.print("Elements In The Stack : ");
       System.out.print("{");
     while(S.isEmpty()!=true){
